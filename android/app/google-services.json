@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "393643918043",
+    "firebase_url": "https://myfirstdb-102f2.firebaseio.com",
+    "project_id": "myfirstdb-102f2",
+    "storage_bucket": "myfirstdb-102f2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:393643918043:android:657a65e30f4a0c62dd02fe",
+        "android_client_info": {
+          "package_name": "com.tekrar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "393643918043-1j9b6d9m0cmg2ctmsul3lqsq465r2ilh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tekrar",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "393643918043-82var0bubsbgrudmef5mb3k5q0sfa1ep.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAT_YV1gIrwxlV0hF3l4O95dVXRB3Qq-wQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "393643918043-82var0bubsbgrudmef5mb3k5q0sfa1ep.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
