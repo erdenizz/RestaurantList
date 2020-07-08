@@ -10,21 +10,24 @@ import  {Restaurants, Cities} from './pages/index'
 const Stack = createStackNavigator();
 
 
-function Router() {
+function Router(props) {
     return (
         <NavigationContainer>
-            <Stack.Navigator initialRouteName="MainPage">
-
-                <Stack.Screen
-                    name="Restaurants"
-                    component={Restaurants}
-
-                />
-
-                <Stack.Screen
-                    name="City"
+            <Stack.Navigator initialRouteName="Cities">
+           
+            <Stack.Screen
+                    name="Cities"
                     component={Cities}
                 />
+               
+                <Stack.Screen
+                    name="Restaurants" 
+                    component={Restaurants}
+                    title={props.cityName}
+
+                />
+
+              
 
 
 

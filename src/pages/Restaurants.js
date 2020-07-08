@@ -1,46 +1,45 @@
 import React, { useState, useEffect} from 'react'
-import { SafeAreaView, View, Text, Button, FlatList,  } from 'react-native'
+import {View, Text, FlatList } from 'react-native'
 import axios from 'axios'
+import RestaurantsListItem from '../components/RestaurantsListItem'
 
-const Restaurants = props => {
-    
-  const [myList, setList] = useState([])
 
-  useEffect(() =>{
+const Restaurants = (props) =>{
+    const[listRes,setResList]=useState([])
+
+    useEffect(()=>{
     fetchData()
-  }, [])
+},[])
 
-
-  const fetchData = async () => {
-
-    let response = await axios.get(`https://opentable.herokuapp.com/api/cities`)
-    setList(response)
-    
-  }
-
-  return (
-    <SafeAreaView >
-      <View style={{ flex: 1 }}>
-
-
-    
-          
+    const fetchData = async ()=>{
+        let {data} = await axios.get("https://opentable.herokuapp.com/api/restaurants?city="+props.route.params.cityName)
+        console.log(data.restaurants)
+        setResList(data.restaurants)
         
-     
-            
+    }
 
-            <FlatList
-              keyExtractor={(_, index) => index.toString()}
-              data={myList}
-              renderItem={renderCities}
-              
+    const renderRestaurants =({item})=> {
+        return(
+            <RestaurantsListItem
+             rest={item}
             />
-        
-        
-      
+        )
+    }
+
+
+    return ( 
+        <View>
+            <Text> Lokantalar</Text>
+            <FlatList 
+                keyExtractor={(_,index)=>index.toString()}
+                data={listRes}
+                renderItem={renderRestaurants}
+            
+            />
         </View>
-    </SafeAreaView>
-  )
+    )
 }
 
-export  {Restaurants}
+export {Restaurants}
+
+
