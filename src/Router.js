@@ -3,7 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 
-import  {Restaurants, Cities} from './pages/index'
+import  {Restaurants, Cities, RestaurantsInfo} from './pages/index'
 
 
 
@@ -23,10 +23,15 @@ function Router(props) {
                 <Stack.Screen
                     name="Restaurants" 
                     component={Restaurants}
-                    title={props.cityName}
+                    //title={props.cityName}
 
                 />
+                 <Stack.Screen
+                    name="RestaurantsInfo" 
+                    component={RestaurantsInfo}
+                    
 
+                />
               
 
 

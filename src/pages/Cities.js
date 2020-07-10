@@ -51,7 +51,7 @@ const Cities = props => {
             
               :
               <View>
-            <SearchBar placeHolder="Lokanta Giriniz" onChangeText={searchCity}/>
+            <SearchBar placeHolder="Şehir Giriniz" onChangeText={searchCity}/>
             <FlatList
             
             keyExtractor={(_, index) => index.toString()}

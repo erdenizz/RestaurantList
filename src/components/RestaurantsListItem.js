@@ -4,9 +4,12 @@ import {View, Text, TouchableOpacity, Image, Dimensions} from 'react-native'
 const RestaurantsListItem = (props) =>{
     return(
         <View>
-            <Image source={{uri:props.rest.image_url}} />
+            <TouchableOpacity onPress ={()=>props.clickRest(props.rest)}>
+
+            <Image style={{height:Dimensions.get("window").height/2}} source={{uri:props.rest.image_url}} />
             <Text>{props.rest.name} </Text>
             <Text>{props.rest.area}</Text>
+            </TouchableOpacity>
         </View>
     )
 
