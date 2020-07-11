@@ -7,6 +7,7 @@ import  {Restaurants, Cities, RestaurantsInfo} from './pages/index'
 
 
 
+
 const Stack = createStackNavigator();
 
 
@@ -18,17 +19,34 @@ function Router(props) {
             <Stack.Screen
                     name="Cities"
                     component={Cities}
+                    options={{headerShown:false}}
                 />
                
                 <Stack.Screen
                     name="Restaurants" 
                     component={Restaurants}
-                    //title={props.cityName}
+                    options={({ route }) => ({ 
+                        title: route.params.cityName +" Restaurantları",
+                        headerStyle:{
+                            backgroundColor:'#ba7967'
+                            
+                        },
+                        headerTintColor: '#ffdecf'
+                 })}
 
                 />
                  <Stack.Screen
                     name="RestaurantsInfo" 
                     component={RestaurantsInfo}
+                    options={({ route }) => ({ 
+                        title: route.params.restInfo.name,
+                        headerStyle:{
+                            backgroundColor:'#ba7967'
+                            
+                        },
+                        headerTintColor: '#ffdecf'
+
+                     })}
                     
 
                 />

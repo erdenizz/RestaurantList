@@ -1,8 +1,8 @@
 import React, { useState, useEffect} from 'react'
 import {View, Text, FlatList, ActivityIndicator } from 'react-native'
 import axios from 'axios'
-import RestaurantsListItem from '../components/RestaurantsListItem'
-import SearchBar from '../components/SearchBar'
+
+import {RestaurantsListItem, SearchBar} from '../components/index'
 
 
 const Restaurants = (props) =>{
@@ -47,7 +47,7 @@ const Restaurants = (props) =>{
 
 
     return ( 
-        <View>
+        <View style={{ flex: 1, backgroundColor:'#ba7967'}}>
             {loading ?
                 <View> 
                 <ActivityIndicator size="large" />
@@ -55,8 +55,7 @@ const Restaurants = (props) =>{
                 :
                 <View>
                     
-                <Text> Lokantalar</Text>
-                <SearchBar placeHolder="Lokanta Giriniz" onChangeText={restSearch} />
+                <SearchBar placeHolder="Hangi Restaurant ?" onChangeText={restSearch} />
                 <FlatList 
                 keyExtractor={(_,index)=>index.toString()}
                 data={listRes}

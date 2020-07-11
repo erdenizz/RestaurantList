@@ -1,5 +1,7 @@
 import React from 'react'
-import {View, Text, Image,Dimensions} from 'react-native'
+import {View, Text, Image,Dimensions, Button} from 'react-native'
+import styles from '../styles'
+
 
 
 
@@ -8,12 +10,21 @@ const RestaurantsInfo = props =>{
     // console.log(info)
     console.log(info.image_url)
     return(
-        <View>
+        <View style={{flex:1,backgroundColor:'#ba7967'}}>
             <Image style={{height:Dimensions.get("window").height/2}} source={{uri:info.image_url}} />
-           <Text>{info.name} </Text>
-           <Text>{info.area}</Text>
-           <Text>{info.address}</Text>
-           <Text>{info.phone}</Text>
+           <View style={styles.restInfo.container}>
+
+               <Text style={styles.restInfo.text}>{info.area}</Text>
+           </View>
+           <View style={styles.restInfo.container}>
+
+               <Text style={styles.restInfo.text2}>{info.city}</Text>
+           </View>
+           <View style={styles.restInfo.container}>
+
+               <Text style={styles.restInfo.text2}>+{info.phone}</Text>
+           </View>
+           <Button  title="Rezervasyon yap" onPress={info.mobile_reserve_url} />
         </View>
     )
 }

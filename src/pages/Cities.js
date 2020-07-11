@@ -2,8 +2,9 @@ import React, { useState, useEffect} from 'react'
 import { SafeAreaView, View, Text, Button, FlatList, ActivityIndicator,  } from 'react-native'
 import axios from 'axios'
 
-import SearchBar from '../components/SearchBar'
-import CityItem from '../components/CityItem'
+
+import {SearchBar,CityItem } from '../components/index'
+
 
 const Cities = props => {
   const [loading,setLoading] = useState(true)
@@ -18,7 +19,7 @@ const Cities = props => {
   const fetchData = async () => {
 
     let { data } = await axios.get("https://opentable.herokuapp.com/api/cities")
-  //  console.log(data.cities)
+  
     setList(data.cities)
     setOriginalList(data.cities)
     setLoading(false)
@@ -41,23 +42,24 @@ const Cities = props => {
   }
 
   return (
-    <SafeAreaView  style={{ flex: 1 }}>
+    <SafeAreaView  style={{ flex: 1, backgroundColor:'#ba7967'}}>
       { loading ?
         
-            <View style={{ flex: 1 }}>
+        <View style={{ flex: 1 }}>
                 <ActivityIndicator  size ="large"/>
 
             </View>
             
-              :
-              <View>
-            <SearchBar placeHolder="Şehir Giriniz" onChangeText={searchCity}/>
+            :
+            <View style={{}}>
+            <SearchBar placeHolder="Hangi Şehir ?" onChangeText={searchCity}/>
+            
             <FlatList
             
             keyExtractor={(_, index) => index.toString()}
             data={myList}
             renderItem={({item})=> <CityItem cities={item} clickCity={selectCity} />}
-            // renderItem={renderPosts}
+            
             
             />
             </View>

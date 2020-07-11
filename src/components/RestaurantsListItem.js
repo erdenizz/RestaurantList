@@ -1,21 +1,25 @@
 import React from 'react'
 import {View, Text, TouchableOpacity, Image, Dimensions} from 'react-native'
+import styles from '../styles'
 
 const RestaurantsListItem = (props) =>{
     return(
-        <View>
+    <View >
+
+        <View style={styles.rest.container}>
             <TouchableOpacity onPress ={()=>props.clickRest(props.rest)}>
 
             <Image style={{height:Dimensions.get("window").height/2}} source={{uri:props.rest.image_url}} />
-            <Text>{props.rest.name} </Text>
-            <Text>{props.rest.area}</Text>
+            <Text style={styles.rest.textRest}>{props.rest.name} </Text>
+            <Text style={styles.rest.textCity}>{props.rest.area}</Text>
             </TouchableOpacity>
         </View>
+    </View>
     )
 
 }
 
-export default RestaurantsListItem
+export  {RestaurantsListItem}
 
 // address: "100 N. Hayford Rd"
 // area: "Seattle / Eastern Washington"

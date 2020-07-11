@@ -1,12 +1,13 @@
 import React from 'react'
 import {TextInput, View} from 'react-native'
+import styles from '../styles'
 
 
 const SearchBar = props =>{
     return(
-        <View >
-            <TextInput onChangeText={props.onChangeText} placeholder={props.placeHolder}/>
+        <View style={styles.city.searchBar}>
+            <TextInput style={{fontWeight:'bold'}} onChangeText={props.onChangeText} placeholder={props.placeHolder}/>
         </View>
     )
 }
-export default SearchBar
+export {SearchBar}
